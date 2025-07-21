@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Avance - Monitoreo de estado de equipos</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Wiki del Proyecto</h2>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="avance1.html">Primer Avance</a></li>
+            <li><a href="avance2.html">Segundo Avance</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <div class="container">
+                <h1><a href="../index.html">Monitoreo de estado de equipos</a></h1>
+            </div>
+        </header>
+
+        <section class="content-area">
+            <article id="introduccion-avance1">
+                <h2>Primer Avance del Proyecto</h2>
+                <p>En esta etapa se realiza el análisis inicial del contexto del sistema. Se recopila información sobre necesidades del usuario, dispositivos a monitorear, y condiciones operativas. El objetivo principal es definir el propósito y alcance del servicio de monitoreo.</p>
+                <img src="../assets/img/gantt_fase_1.png" alt="Diagrama del primer avance" class="content-image">
+            </article>
+
+            <article id="objetivos-avance1">
+                <h3>Alcance</h3>
+                <ul>
+                    <li>El sistema debe recolectar  datos periódicamente que indiquen el estado o estatus del equipo basado en identificar propiedades básicas del sistema .</li>
+                    <li>Por el momento el alcance solamente estará basado en dispositivos con sistemas operativos Windows y Linux.</li>
+                </ul>
+            </article>
+
+            <article id="requerimientos-avance1">
+                <h3>Requerimientos operativos</h3>
+                <ul>
+                    <li>El equipo requiere de una conectividad de red.</li>
+                    <li>Requisitos minimos para ejecutar .bat o .ssh</li>
+                </ul>
+            </article>
+            
+            <article id="actores-avance1">
+                <h3>Diagrama de esquema de actores</h3>
+                <ul>
+                    <li>Administradores del sistema estarán encargados de las configuraciones iniciales tanto para servidores como para clientes.</li>
+                </ul>
+                <img src="../assets/img/esquema_actores.png" alt="Diagrama esquema actores" class="content-image">
+            </article>
+            
+            <article id="escnariose-avance1">
+                <h3>Diagrama de Escenarios</h3>
+                <p>Identificamos los siguientes escenarios</p>
+                <ul>
+                    <li>- Recolecta datos.</li>
+                    <li>- Crea un archivo JSON.</li>
+                    <li>- Genera una copia local y envía una al servidor.</li>
+                    <li>- Del lado del servidor se tiene tecnología HTTP POST, se trabajó con una API REST porque tenemos una plataforma Wildfly.</li>
+                </ul>
+                <img src="../assets/img/escenario.png" alt="Diagrama escenarios" class="content-image">
+            </article>
+            
+            <article id="objetivotecnico-avance1">
+                <h3>Declaración del objetivo técnico del sistema</h3>
+                <p>La funcionalidad se centra en la recolección y almacenamiento del estatus del sistema</p>
+                <ul>
+                   <li>- Un servicio web que nos permita la recolección.</li>
+                   <li>- Un hub centralizado en la recolección de datos tanto en linux como en Windows.</li>
+                   <li>- Por la viabilidad de las tecnologías este API está desarrollado en java REST. Esta funcionalidad se centra en que recibirá, procesará y almacenará información.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

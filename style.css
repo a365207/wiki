@@ -1,0 +1,314 @@
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    font-family: 'Trebuchet MS', Arial, sans-serif; /* Fuente Trebuchet por que me late*/
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+a 
+{
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover 
+{
+    text-decoration: underline;
+}
+ul 
+{
+    list-style: none;
+}
+/* Sidebar - Menu lateral izquierdo NO TOCAR o lo dañas */
+.sidebar 
+{
+    width: 250px; /* Ancho */
+    min-width: 250px; /* Asegura que no se haga más pequeña */
+    background: #333; /* Fondo oscuro cool */
+    color: #fff;
+    padding: 20px;
+    position: fixed; /* Fija el sidebar */
+    height: 100vh; 
+    overflow-y: auto; /* Para desplazar si el sidebar es largo */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Antepone a cualquier elemento */
+}
+.sidebar h2 
+{
+    color: #fff; /* Títulos en el sidebar blancos */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #555;
+    text-align: center;
+}
+
+.sidebar ul 
+{
+    padding: 0;
+}
+
+.sidebar ul li 
+{
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a 
+{
+    color: #f4f4f4; /* Enlaces del sidebar */
+    display: block; 
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover 
+{
+    background-color: #007bff; /* Cambia color al pasar el raton */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Área de Contenido Principal NO TOCAR o lo dañas*/
+.main-content {
+    flex-grow: 1; 
+    margin-left: 250px; 
+    padding: 20px;
+    overflow-y: auto; 
+    max-height: 100vh;
+    background-color: #fff;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); 
+}
+
+/* Titulos en .main-content. */
+.main-header 
+{
+    background: #f8f8f8; /* Titulos */
+    color: #333;
+    padding: 1rem 0;
+    border-bottom: #eee 1px solid;
+    margin-bottom: 20px;
+}
+.main-header .container 
+{
+    max-width: 100%; 
+    padding: 0 20px;
+}
+.main-header h1 
+{
+    float: left;
+    margin: 0;
+    font-size: 1.8rem;
+}
+.main-header h1 a 
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.main-nav 
+{ 
+    display: none;
+}
+.content-area 
+{
+    background: #fff; 
+    padding: 20px;
+    border-radius: 5px;
+}
+.content-area article 
+{
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee; /* Linea para separar articulos */
+}
+
+.content-area article:last-child 
+{
+    border-bottom: none; /* Linea ultimo articulo */
+}
+
+.content-area article h2 
+{
+    color: #007bff;
+    margin-bottom: 10px;
+    border-bottom: none; 
+    padding-bottom: 5px;
+    font-size: 2rem;
+}
+
+.content-area article h3 {
+    color: #555;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+/*
+.content-image 
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+*/
+
+.content-image 
+{
+    max-width: 70%; /* cambia el porcentaje de las imagenes ojo de todas */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.image-caption 
+{
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Footer para el copiriiinnggg */
+.main-footer 
+{
+    background: #f8f8f8; 
+    color: #555;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 40px; 
+    border-top: 1px solid #eee;
+}
+.main-footer .container 
+{
+    max-width: 100%;
+    padding: 0 20px;
+}
+/*Formato del cuerpo del archivo*/
+@media (max-width: 768px) 
+{
+    body 
+    {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .sidebar 
+    {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .sidebar ul 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar ul li 
+    {
+        margin: 5px 8px;
+    }
+
+    .main-content 
+    {
+        margin-left: 0;
+        max-height: none; 
+        padding: 15px;
+    }
+
+    .main-header h1 
+    {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .main-nav {
+        display: block; 
+        text-align: center;
+    }
+}
+
+/* Para la portada */
+.portada .project-image {
+    margin-bottom: 30px; /* Imagen de la portada */
+}
+.portada ul 
+{
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style: disc;
+}
+.portada ul li 
+{
+    margin-bottom: 8px;
+}
+
+
+/* Tabla con bordes */
+/*
+.clase_table 
+{
+    border-collapse: separate;
+    border-spacing: 10;
+    border: 1px solid black;
+    border-radius: 15px;
+    -moz-border-radius: 20px;
+    padding: 2px;
+}
+*/
+
+/* Tabla con bordes redondos pero los chidos*/
+table
+{
+    margin: 35px 50px;
+}
+td, th
+{
+    border: 1px solid;
+    padding: 8px 15px;
+}
+thead
+{
+    background-color: #eff3f4;
+}
+th:first-child
+{
+    border-top-left-radius: 7px;
+}
+th:nth-last-child(1)
+{
+    border-top-right-radius: 7px;
+}
+.ultima_fila td:first-child
+{
+    border-bottom-left-radius: 7px;
+}
+.ultima_fila td:nth-last-child(1)
+{
+    border-bottom-right-radius: 7px;
+}
+

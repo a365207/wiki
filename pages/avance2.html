@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo Avance - Monitoreo de estado de equipos</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>Wiki del Proyecto</h2>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="avance1.html">Primer Avance</a></li>
+            <li><a href="avance2.html">Segundo Avance</a></li>
+            </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <div class="container">
+                <h1><a href="../index.html">Monitoreo de estado de equipos</a></h1>
+                </div>
+        </header>
+
+        <section class="content-area">
+            <article id="introduccion-avance2">
+                <h2>Segundo Avance del Proyecto</h2>
+                <p>Definición de la estructura: Implementación de funciones en Java que permiten conectar el sistema con dispositivos o servicios de red.</p>
+                <img src="../assets/img/gantt_fase_2.png" alt="planograma parte 2" class="content-image">
+            </article>
+
+            <article id="flujodiagram-avance2">
+                <h3>Diagrama de flujo</h3>
+                <ul>
+                    <li>Diagrama de flujo</li>
+                    <li>Inicio: Petición HTTP POST</li>
+                    <li>Validar JSON</li>
+                    <li>Parsear JSON a Objeto Java</li>
+                    <li>¿Directorios de Logs Existen y tienen Permisos?</li>
+                    <li>Generar Archivo Único</li>
+                    <li>Guardar JSON en Archivo .json</li>
+                    <li>Loggear confirmación</li>
+                    <li>Retornar HTTP 200</li>
+                    <li>Flujos de Error</li>
+                    <li>Diagrama de flujo</li>
+                </ul>
+                <img src="../assets/img/flujo_api_rest.png" alt="Diagrama de flujo" class="content-image">
+            </article>
+
+            <article id="pruebas-avance2">
+                <h3>Bitácora técnica de pruebas de conexión</h3>
+                <p>El módulo de conexión API, implementado en Java utilizando JAX-RS (Jakarta RESTful Web Services) y desplegado en WildFly.</p>
+                <ul>
+                    <li>La funcionalidad del módulo de conexión API.</li>
+                </ul>
+                <img src="../assets/img/bitacora_pruebas.png" alt="Diagrama pruebas de conexión" class="content-image">
+            </article>
+
+            <article id="json-avance2">
+                <h3>Ejemplo de entrada-salida</h3>
+                <p>JSON, de entrada y salida quedaría de la siguiente manera:</p>
+                <ul>
+                    <li>La funcionalidad del módulo de conexión API.</li>
+                    <li>{</li>
+                    <li>"hostname": "srvtime",</li>
+                    <li>"os": "Linux openSUSE Leap 15.06",</li>
+                    <li>"ip_address": "192.168.1.83",</li>
+                    <li>"cpu_load": 15.75,</li>
+                    <li>"ram_total": 8589934592,</li>
+                    <li>"ram_used": 2147483648,</li>
+                    <li>"disk_info": [</li>
+                    <li>{</li>
+                      <li>"path": "/",</li>
+                      <li>"total_gb": 100.0,</li>
+                      <li>"used_gb": 45.5</li>
+                    <li>},</li>
+                    <li>{</li>
+                      <li>"path": "/mnt/data",</li>
+                      <li>"total_gb": 500.0,</li>
+                      <li>"used_gb": 120.3</li>
+                    <li>}</li>
+                    <li>],</li>
+                    <li>"logged_in_users": [</li>
+                    <li>"root",</li>
+                    <li>"srvsm"</li>
+                    <li>],</li>
+                    <li>"timestamp": "2025-07-11T19:53:51-06:00"</li>
+                    <li>} </li>
+                </ul>
+            </article>
+
+            <article id="tablaerror-avance2">
+                <h3>Manejo de errores</h3>
+                <p>Diseño de estrategias de gestión de excepciones y fallos del sistema, con registros de eventos críticos y mensajes de diagnóstico.</p>
+                <ul>
+                    <li></li>
+                </ul>
+                
+               <table>
+                   <thead>
+                        <tr>
+                        <th><b>Tipo de Error</b></th>
+                        <th><b>Descripción</b></th>
+                        <th><b>Código HTTP</b></th>
+                        <th><b>Respuesta</b></th>
+                        <th><b>System.err</b></th>
+                        </tr>
+                    </thead>
+                   
+                <tbody>
+					<tr>
+                        <td>Validación de Entrada</td>
+                        <td>La solicitud no contiene datos JSON o está vacía.</td>
+                        <td>400 Bad Request</td>
+                        <td>{"error": "La petición JSON no contiene información."}</td>
+                        <td>Si</td>
+					</tr>
+
+					<tr>
+                        <td>Fallo de E/S</td>
+                        <td>No se puede crear el directorio para los logs JSON.</td>
+                        <td>500 Internal Server Error</td>
+                        <td>{"error": "Error del servidor al crear directorio."}</td>
+                        <td>Si</td>
+					</tr>
+
+					<tr class="ultima_fila">
+                        <td>Fallo de E/S</td>
+                        <td>No se puede escribir el archivo JSON de estado.</td>
+                        <td>500 Internal Server Error</td>
+                        <td>{"error": "Error interno del servidor al guardar el archivo JSON."}</td>
+                        <td>No</td>
+					</tr>
+                </tbody>
+                   
+                </table>
+            </article>
+        </section>
+
+ 
+    </main>
+</body>
+</html>
