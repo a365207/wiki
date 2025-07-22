@@ -146,7 +146,8 @@ ul
     font-size: 2rem;
 }
 
-.content-area article h3 {
+.content-area article h3 
+{
     color: #555;
     margin-top: 25px;
     margin-bottom: 15px;
